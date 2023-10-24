@@ -1,0 +1,3 @@
+[submodule "pricehouse"]
+	path = pricehouse
+	url = https://github.com/tri27022001/pricehouse.git
