@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Prediction</title>
+    <style>
+        .form-group {
+            display: flex;
+            justify-content: space-between; /* Cách đều giữa label và input */
+            margin-bottom: 5px; /* Khoảng cách giữa các cặp label-input */
+        }
+
+        .form-group label {
+            flex: 1;
+/*            margin-right: -300px; /* Khoảng cách giữa label và input */*/
+        }
+
+        .form-group input {
+            flex: 0;
+            margin-right: 1000px;
+        }
+
+        h1 {
+            text-align: center; /* Căn giữa tiêu đề theo chiều ngang */
+            margin: 0 auto; 
+        }
+
+        .submit-button {
+            background-color: #007BFF; /* Màu nền của nút */
+            color: #fff; /* Màu chữ trắng */
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3; /* Màu nền khi hover */
+        }
+
+        .file-upload{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>House Price Prediction</h1>
+    <form method="post">
+        <label for="model">Select a model:</label>
+        <select name="model" id="model">
+            <option value="model1">decision_tree_model</option>
+            <option value="model2">Model 2</option>
+            <option value="model3">Model 3</option>
+            <option value="model4">Model 4</option>
+            <option value="model5">Model 5</option>
+            <option value="model6">Model 6</option>
+        </select>
+
+        <div class="file-upload">
+            <label for="csv-file">Upload a CSV file:</label>
+            <input type="file" name="csv-file" id="csv-file">
+        </div>
+
+        <h2>Enter input features:</h2>
+        <div class="form-group">
+            <label for="feature1">Month:</label>
+            <input type="number" name="feature1" id="feature1">
+        </div>
+        <div class="form-group">
+            <label for="feature2">Day:</label>
+            <input type="number" name="feature2" id="feature2">
+        </div>
+        <div class="form-group">
+            <label for="feature3">Year:</label>
+            <input type="number" name="feature3" id="feature3">
+        </div>
+        <div class="form-group">
+            <label for="feature4">Hour:</label>
+            <input type="number" name="feature4" id="feature4">
+        </div>
+        <div class="form-group">
+            <label for="feature5">Minute:</label>
+            <input type="number" name="feature5" id="feature5">
+        </div>
+        <div class="form-group">
+            <label for="feature6">Second:</label>
+            <input type="number" name="feature6" id="feature6">
+        </div>
+        <div class="form-group">
+            <label for="feature7">Geo_lat:</label>
+            <input type="number" name="feature7" id="feature7" step="any">
+        </div>
+        <div class="form-group">
+            <label for="feature8">Geo_lon:</label>
+            <input type="number" name="feature8" id="feature8" step="any">
+        </div>
+        <div class="form-group">
+            <label for="feature9">Region:</label>
+            <input type="number" name="feature9" id="feature9">
+        </div>
+        <div class="form-group">
+            <label for="feature10">Building_type:</label>
+            <input type="number" name="feature10" id="feature10">
+        </div>
+        <div class="form-group">
+            <label for="feature11">Level:</label>
+            <input type="number" name="feature11" id="feature11">
+        </div>
+        <div class="form-group">
+            <label for="feature12">Levels:</label>
+            <input type="number" name="feature12" id="feature12">
+        </div>
+        <div class="form-group">
+            <label for="feature13">Room:</label>
+            <input type="number" name="feature13" id="feature13">
+        </div>
+        <div class="form-group">
+            <label for="feature14">Area:</label>
+            <input type="number" name="feature14" id="feature14" step="any">
+        </div>
+        <div class="form-group">
+            <label for="feature15">Kitchen_area:</label>
+            <input type="number" name="feature15" id="feature15" step="any">
+        </div>
+        <div class="form-group">
+            <label for="feature16">Object_type:</label>
+            <input type="number" name="feature16" id="feature16">
+        </div>
+        <!-- Repeat this for feature2 to feature16 -->
+
+        <button class="submit-button" type="submit">Predict</button>
+    </form>
+
+    {% if predicted_price %}
+    <h2>Predicted Price:</h2>
+    <p>Giá nhà dự đoán là: {{ predicted_price }}</p>
+    {% endif %}
+
+    {% if message %}
+    <div>{{ message }}</div>
+    {% endif %}
+
+</body>
+</html>
